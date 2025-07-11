@@ -36,7 +36,7 @@ export const About = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
               <div className="flex items-center space-x-3">
                 <MapPin className="text-blue-600" size={20} />
-                <span className="text-muted-foreground">Jaipur, India</span>
+                <span className="text-muted-foreground">Bangalore, Karnataka</span>
               </div>
               
               <div className="flex items-center space-x-3">
