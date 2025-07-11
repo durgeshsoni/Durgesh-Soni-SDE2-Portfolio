@@ -31,13 +31,13 @@ export const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-white">
+    <section id="skills" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
             Skills & Expertise
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary/60 mx-auto rounded-full"></div>
           <p className="text-lg text-muted-foreground mt-6 max-w-2xl mx-auto">
             A comprehensive toolkit of modern technologies and frameworks I use to build scalable applications
           </p>
@@ -47,14 +47,14 @@ export const Skills = () => {
           {skillCategories.map((category, index) => (
             <Card 
               key={category.title} 
-              className="group hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in border-0 bg-gradient-to-br from-gray-50 to-white"
+              className="group hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in border-border gradient-bg"
               style={{ animationDelay: `${index * 150}ms` }}
             >
               <CardHeader className="text-center pb-4">
                 <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r ${category.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                   <category.icon className="text-white" size={32} />
                 </div>
-                <CardTitle className="text-xl font-semibold">{category.title}</CardTitle>
+                <CardTitle className="text-xl font-semibold text-foreground">{category.title}</CardTitle>
               </CardHeader>
               
               <CardContent>
@@ -62,7 +62,7 @@ export const Skills = () => {
                   {category.skills.map((skill) => (
                     <span
                       key={skill}
-                      className="px-3 py-1 bg-gradient-to-r from-gray-100 to-gray-200 text-sm rounded-full text-gray-700 hover:from-blue-100 hover:to-purple-100 hover:text-blue-700 transition-all duration-200 cursor-default"
+                      className="px-3 py-1 bg-muted text-sm rounded-full text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-200 cursor-default"
                     >
                       {skill}
                     </span>
@@ -74,15 +74,15 @@ export const Skills = () => {
         </div>
 
         <div className="mt-16 text-center">
-          <h3 className="text-2xl font-semibold mb-8">Certifications</h3>
+          <h3 className="text-2xl font-semibold mb-8 text-foreground">Certifications</h3>
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <Card className="p-6 hover:shadow-lg transition-shadow duration-300">
-              <h4 className="font-semibold text-lg mb-2">Full Stack Development Program</h4>
+            <Card className="p-6 hover:shadow-lg transition-shadow duration-300 border-border">
+              <h4 className="font-semibold text-lg mb-2 text-foreground">Full Stack Development Program</h4>
               <p className="text-muted-foreground">Certified by Masai School</p>
             </Card>
             
-            <Card className="p-6 hover:shadow-lg transition-shadow duration-300">
-              <h4 className="font-semibold text-lg mb-2">Problem Solving Certification</h4>
+            <Card className="p-6 hover:shadow-lg transition-shadow duration-300 border-border">
+              <h4 className="font-semibold text-lg mb-2 text-foreground">Problem Solving Certification</h4>
               <p className="text-muted-foreground">Awarded by HackerRank</p>
             </Card>
           </div>

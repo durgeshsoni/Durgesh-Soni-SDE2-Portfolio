@@ -32,13 +32,13 @@ export const Experience = () => {
   ];
 
   return (
-    <section id="experience" className="py-20 bg-gray-50">
+    <section id="experience" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
             Professional Experience
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary/60 mx-auto rounded-full"></div>
           <p className="text-lg text-muted-foreground mt-6 max-w-2xl mx-auto">
             Building scalable solutions and optimizing systems across different industries
           </p>
@@ -48,20 +48,20 @@ export const Experience = () => {
           {experiences.map((exp, index) => (
             <Card 
               key={index} 
-              className="group hover:shadow-xl transition-all duration-300 hover:scale-[1.02] animate-fade-in border-l-4 border-l-blue-500"
+              className="group hover:shadow-xl transition-all duration-300 hover:scale-[1.02] animate-fade-in border-l-4 border-l-primary bg-card"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               <CardHeader>
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                   <div className="flex items-center space-x-3 mb-2 md:mb-0">
-                    <div className="p-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full">
-                      <Briefcase className="text-white" size={20} />
+                    <div className="p-2 bg-primary rounded-full">
+                      <Briefcase className="text-primary-foreground" size={20} />
                     </div>
                     <div>
-                      <CardTitle className="text-xl font-bold text-primary">
+                      <CardTitle className="text-xl font-bold text-foreground">
                         {exp.title}
                       </CardTitle>
-                      <p className="text-lg font-semibold text-blue-600">{exp.company}</p>
+                      <p className="text-lg font-semibold text-primary">{exp.company}</p>
                     </div>
                   </div>
                   
@@ -82,7 +82,7 @@ export const Experience = () => {
                 <ul className="space-y-3">
                   {exp.achievements.map((achievement, achIndex) => (
                     <li key={achIndex} className="flex items-start space-x-3">
-                      <div className="w-2 h-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mt-2 flex-shrink-0"></div>
+                      <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                       <span className="text-muted-foreground leading-relaxed">{achievement}</span>
                     </li>
                   ))}

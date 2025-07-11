@@ -21,13 +21,13 @@ export const Education = () => {
   ];
 
   return (
-    <section id="education" className="py-20 bg-gray-50">
+    <section id="education" className="py-20 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
             Education
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-600 to-purple-600 mx-auto rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-primary to-primary/60 mx-auto rounded-full"></div>
           <p className="text-lg text-muted-foreground mt-6 max-w-2xl mx-auto">
             Academic foundation and continuous learning journey
           </p>
@@ -37,20 +37,20 @@ export const Education = () => {
           {education.map((edu, index) => (
             <Card 
               key={index} 
-              className="group hover:shadow-xl transition-all duration-300 hover:scale-[1.02] animate-fade-in border-l-4 border-l-purple-500"
+              className="group hover:shadow-xl transition-all duration-300 hover:scale-[1.02] animate-fade-in border-l-4 border-l-primary bg-card"
               style={{ animationDelay: `${index * 200}ms` }}
             >
               <CardHeader>
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                   <div className="flex items-center space-x-3 mb-2 md:mb-0">
-                    <div className="p-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full">
-                      <GraduationCap className="text-white" size={20} />
+                    <div className="p-2 bg-primary rounded-full">
+                      <GraduationCap className="text-primary-foreground" size={20} />
                     </div>
                     <div>
-                      <CardTitle className="text-xl font-bold text-primary">
+                      <CardTitle className="text-xl font-bold text-foreground">
                         {edu.degree}
                       </CardTitle>
-                      <p className="text-lg font-semibold text-purple-600">{edu.school}</p>
+                      <p className="text-lg font-semibold text-primary">{edu.school}</p>
                     </div>
                   </div>
                   
@@ -71,8 +71,8 @@ export const Education = () => {
                 <div className="flex items-center space-x-2">
                   <span className={`px-3 py-1 rounded-full text-sm font-medium ${
                     edu.status === 'In Progress' 
-                      ? 'bg-blue-100 text-blue-700' 
-                      : 'bg-green-100 text-green-700'
+                      ? 'bg-primary/20 text-primary' 
+                      : 'bg-green-500/20 text-green-500'
                   }`}>
                     {edu.status}
                   </span>
