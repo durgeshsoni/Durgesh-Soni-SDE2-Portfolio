@@ -1,52 +1,63 @@
+
 import { ExternalLink, Award, CheckCircle, Star, TrendingUp } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export const Skills = () => {
   const skillCategories = [
     {
+      id: "languages",
       title: "Languages & Frameworks",
-      icon: "💻",
       skills: [
-        { name: "Java", icon: "☕", level: 95, color: "from-orange-500 to-red-600" },
-        { name: "Spring Boot", icon: "🍃", level: 90, color: "from-green-500 to-emerald-600" },
-        { name: "JavaScript", icon: "🟨", level: 85, color: "from-yellow-400 to-orange-500" },
-        { name: "React", icon: "⚛️", level: 88, color: "from-blue-400 to-cyan-500" },
-        { name: "Node.js", icon: "🟢", level: 80, color: "from-green-400 to-green-600" },
-        { name: "TypeScript", icon: "🔷", level: 82, color: "from-blue-500 to-blue-700" }
+        { name: "Java", icon: "☕" },
+        { name: "Spring Boot", icon: "🍃" },
+        { name: "JavaScript", icon: "🟨" },
+        { name: "React", icon: "⚛️" },
+        { name: "Node.js", icon: "🟢" },
+        { name: "TypeScript", icon: "🔷" }
       ]
     },
     {
-      title: "Databases & Storage",
-      icon: "🗄️",
+      id: "database",
+      title: "Database",
       skills: [
-        { name: "MySQL", icon: "🐬", level: 90, color: "from-blue-500 to-blue-700" },
-        { name: "MongoDB", icon: "🍃", level: 85, color: "from-green-500 to-green-700" },
-        { name: "PostgreSQL", icon: "🐘", level: 80, color: "from-blue-600 to-indigo-600" },
-        { name: "Redis", icon: "🔴", level: 75, color: "from-red-500 to-red-700" }
+        { name: "MySQL", icon: "🐬" },
+        { name: "MongoDB", icon: "🍃" },
+        { name: "PostgreSQL", icon: "🐘" },
+        { name: "Redis", icon: "🔴" }
       ]
     },
     {
-      title: "Cloud & DevOps",
-      icon: "☁️",
+      id: "cloud",
+      title: "Cloud",
       skills: [
-        { name: "AWS", icon: "☁️", level: 85, color: "from-orange-400 to-orange-600" },
-        { name: "Docker", icon: "🐳", level: 88, color: "from-blue-400 to-blue-600" },
-        { name: "Kubernetes", icon: "⚙️", level: 75, color: "from-blue-500 to-purple-600" },
-        { name: "Git", icon: "📝", level: 95, color: "from-gray-600 to-gray-800" },
-        { name: "CI/CD", icon: "🔄", level: 80, color: "from-green-500 to-blue-500" },
-        { name: "Microservices", icon: "🏗️", level: 90, color: "from-purple-500 to-pink-600" }
+        { name: "AWS", icon: "☁️" },
+        { name: "Docker", icon: "🐳" },
+        { name: "Kubernetes", icon: "⚙️" },
+        { name: "Microservices", icon: "🏗️" }
       ]
     },
     {
-      title: "Tools & Technologies",
-      icon: "🛠️",
+      id: "tools",
+      title: "Tools",
       skills: [
-        { name: "WebFlux", icon: "🌊", level: 78, color: "from-cyan-500 to-blue-600" },
-        { name: "Elasticsearch", icon: "🔍", level: 72, color: "from-yellow-500 to-orange-600" },
-        { name: "Swagger", icon: "📋", level: 85, color: "from-green-500 to-teal-600" },
-        { name: "Jira", icon: "📊", level: 90, color: "from-blue-500 to-blue-700" },
-        { name: "System Design", icon: "🎯", level: 82, color: "from-purple-500 to-indigo-600" }
+        { name: "Git", icon: "📝" },
+        { name: "CI/CD", icon: "🔄" },
+        { name: "WebFlux", icon: "🌊" },
+        { name: "Elasticsearch", icon: "🔍" },
+        { name: "Swagger", icon: "📋" },
+        { name: "Jira", icon: "📊" }
+      ]
+    },
+    {
+      id: "designing",
+      title: "Designing",
+      skills: [
+        { name: "System Design", icon: "🎯" },
+        { name: "UI/UX", icon: "🎨" },
+        { name: "Figma", icon: "🎭" },
+        { name: "Responsive Design", icon: "📱" }
       ]
     }
   ];
@@ -86,52 +97,52 @@ export const Skills = () => {
           </p>
         </div>
 
-        {/* Skills Categories */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 mb-20">
-          {skillCategories.map((category, categoryIndex) => (
-            <Card 
-              key={category.title} 
-              className="glass-card border-0 hover-glow group animate-fade-in-up hover-lift"
-              style={{ animationDelay: `${categoryIndex * 0.1}s` }}
-            >
-              <CardHeader className="pb-6">
-                <CardTitle className="text-xl sm:text-2xl font-bold text-foreground flex items-center justify-center sm:justify-start">
-                  <span className="text-3xl mr-3">{category.icon}</span>
+        {/* Skills Tabs */}
+        <div className="mb-20">
+          <Tabs defaultValue="languages" className="w-full">
+            <TabsList className="grid w-full grid-cols-2 lg:grid-cols-5 mb-8 bg-card/50 backdrop-blur-sm">
+              {skillCategories.map((category) => (
+                <TabsTrigger 
+                  key={category.id} 
+                  value={category.id}
+                  className="text-xs sm:text-sm font-medium data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
+                >
                   {category.title}
-                </CardTitle>
-              </CardHeader>
-              
-              <CardContent>
-                <div className="space-y-6">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div key={skill.name} className="group/skill">
-                      <div className="flex items-center justify-between mb-3">
-                        <div className="flex items-center space-x-3">
-                          <span className="text-xl sm:text-2xl">{skill.icon}</span>
-                          <span className="font-semibold text-foreground text-sm sm:text-base">{skill.name}</span>
-                        </div>
-                        <div className="flex items-center space-x-2">
-                          <span className="text-xs sm:text-sm text-muted-foreground font-mono">{skill.level}%</span>
-                          <TrendingUp className="w-3 h-3 text-primary" />
-                        </div>
-                      </div>
-                      <div className="relative h-2 bg-muted rounded-full overflow-hidden">
+                </TabsTrigger>
+              ))}
+            </TabsList>
+
+            {skillCategories.map((category) => (
+              <TabsContent key={category.id} value={category.id} className="mt-6">
+                <Card className="glass-card border-0 hover-glow">
+                  <CardHeader className="pb-6">
+                    <CardTitle className="text-2xl sm:text-3xl font-bold text-center gradient-text">
+                      {category.title}
+                    </CardTitle>
+                  </CardHeader>
+                  
+                  <CardContent>
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                      {category.skills.map((skill, index) => (
                         <div 
-                          className={`h-full bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out relative`}
-                          style={{ 
-                            width: `${skill.level}%`,
-                            animationDelay: `${(categoryIndex * 6 + skillIndex) * 100}ms`
-                          }}
+                          key={skill.name} 
+                          className="group/skill flex flex-col items-center p-4 sm:p-6 rounded-xl bg-card/30 backdrop-blur-sm border border-white/10 hover:bg-card/50 hover:border-primary/30 transition-all duration-300 hover-lift animate-fade-in-up"
+                          style={{ animationDelay: `${index * 100}ms` }}
                         >
-                          <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
+                          <div className="text-3xl sm:text-4xl mb-3 group-hover/skill:scale-110 transition-transform duration-300">
+                            {skill.icon}
+                          </div>
+                          <span className="text-sm sm:text-base font-semibold text-foreground text-center leading-tight">
+                            {skill.name}
+                          </span>
                         </div>
-                      </div>
+                      ))}
                     </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                  </CardContent>
+                </Card>
+              </TabsContent>
+            ))}
+          </Tabs>
         </div>
 
         {/* Certifications Section */}
