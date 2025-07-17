@@ -120,15 +120,15 @@ ${formData.message}
           </p>
         </div>
 
-        <div className="responsive-grid-2 gap-12 lg:gap-16">
-          {/* Contact Info */}
-          <div className="space-y-8 animate-fade-in-up">
+        <div className="responsive-grid-2 gap-8 lg:gap-12">
+          {/* Left side - Contact Info and Content */}
+          <div className="space-y-6 animate-fade-in-up">
             <div>
-              <h3 className="text-3xl lg:text-4xl font-bold mb-6 text-foreground flex items-center">
-                <MessageCircle className="mr-3 text-primary" size={32} />
+              <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-foreground flex items-center">
+                <MessageCircle className="mr-3 text-primary" size={28} />
                 Let's Talk
               </h3>
-              <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-base lg:text-lg text-muted-foreground mb-6 leading-relaxed font-light">
                 I'm always excited to discuss new opportunities, interesting projects, 
                 or just have a chat about technology and software development. Whether you have 
                 a project in mind or just want to connect, I'd love to hear from you!
@@ -136,27 +136,27 @@ ${formData.message}
             </div>
 
             {/* Contact Methods */}
-            <div className="space-y-6">
+            <div className="space-y-4">
               {contactInfo.map((info, index) => (
                 <Card 
                   key={index} 
                   className="glass-card border-0 hover-glow group hover-lift animate-fade-in-up"
                   style={{ animationDelay: `${0.1 + index * 0.1}s` }}
                 >
-                  <CardContent className="p-6 lg:p-8">
+                  <CardContent className="p-4 lg:p-6">
                     <div className="flex items-center space-x-4">
-                        <div className="p-4 bg-gradient-to-r from-primary to-secondary rounded-xl group-hover:scale-110 transition-transform duration-300 glow-primary">
-                          <info.icon className="text-primary-foreground w-6 h-6" />
-                        </div>
+                      <div className="p-3 bg-gradient-to-r from-primary to-secondary rounded-xl group-hover:scale-110 transition-transform duration-300 glow-primary">
+                        <info.icon className="text-primary-foreground w-5 h-5" />
+                      </div>
                       <div className="flex-1">
-                        <p className="font-bold text-lg text-foreground">{info.label}</p>
+                        <p className="font-bold text-base text-foreground">{info.label}</p>
                         <a 
                           href={info.href}
-                          className={`text-muted-foreground hover:text-primary transition-colors duration-200 ${info.href !== '#' ? 'hover:underline' : ''} text-lg`}
+                          className={`text-muted-foreground hover:text-primary transition-colors duration-200 ${info.href !== '#' ? 'hover:underline' : ''} text-sm lg:text-base`}
                         >
                           {info.value}
                         </a>
-                        <p className="text-sm text-muted-foreground mt-1">{info.description}</p>
+                        <p className="text-xs text-muted-foreground mt-1">{info.description}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -165,13 +165,13 @@ ${formData.message}
             </div>
 
             {/* Response Time Info */}
-            <Card className="glass-card border-0 p-6 lg:p-8">
-              <h4 className="text-xl font-bold mb-4 text-foreground">What to Expect</h4>
-              <div className="space-y-3">
+            <Card className="glass-card border-0 p-4 lg:p-6">
+              <h4 className="text-lg font-bold mb-3 text-foreground">What to Expect</h4>
+              <div className="space-y-2">
                 {responseTime.map((item, index) => (
                   <div key={index} className="flex items-center space-x-3 group">
-                    <item.icon size={18} className="text-primary group-hover:scale-110 transition-transform" />
-                    <span className="text-muted-foreground group-hover:text-foreground transition-colors">
+                    <item.icon size={16} className="text-primary group-hover:scale-110 transition-transform" />
+                    <span className="text-sm text-muted-foreground group-hover:text-foreground transition-colors">
                       {item.text}
                     </span>
                   </div>
@@ -181,49 +181,49 @@ ${formData.message}
 
             {/* Social Links */}
             <div>
-              <h4 className="text-xl font-bold mb-6 text-foreground">Follow & Connect</h4>
-              <div className="flex space-x-4">
+              <h4 className="text-lg font-bold mb-4 text-foreground">Follow & Connect</h4>
+              <div className="flex space-x-3">
                 {socialLinks.map((social, index) => (
                   <a
                     key={index}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group glass p-4 lg:p-5 rounded-xl hover-lift hover-glow transition-all duration-300"
+                    className="group glass p-3 lg:p-4 rounded-xl hover-lift hover-glow transition-all duration-300"
                     title={social.description}
                   >
-                    <social.icon size={28} className="text-foreground group-hover:text-primary transition-colors" />
+                    <social.icon size={24} className="text-foreground group-hover:text-primary transition-colors" />
                   </a>
                 ))}
               </div>
             </div>
           </div>
 
-          {/* Contact Form */}
+          {/* Right side - Contact Form Only */}
           <div className="animate-slide-in-right" style={{ animationDelay: "0.2s" }}>
             <Card className="glass-card border-0 hover-glow">
-              <CardContent className="p-8 lg:p-12">
-                <h3 className="text-3xl font-bold mb-8 text-foreground flex items-center">
-                  <Send className="mr-3 text-primary" size={28} />
+              <CardContent className="p-6 lg:p-8">
+                <h3 className="text-2xl font-bold mb-6 text-foreground flex items-center">
+                  <Send className="mr-3 text-primary" size={24} />
                   Send a Message
                 </h3>
                 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-semibold mb-3 text-foreground">Full Name *</label>
+                      <label className="block text-sm font-semibold mb-2 text-foreground">Full Name *</label>
                       <Input
                         name="name"
                         value={formData.name}
                         onChange={handleChange}
                         placeholder="Your full name"
                         required
-                        className="glass border-primary/20 focus:border-primary bg-background/50 text-foreground placeholder:text-muted-foreground h-12"
+                        className="glass border-primary/20 focus:border-primary bg-background/50 text-foreground placeholder:text-muted-foreground h-10"
                       />
                     </div>
                     
                     <div>
-                      <label className="block text-sm font-semibold mb-3 text-foreground">Email Address *</label>
+                      <label className="block text-sm font-semibold mb-2 text-foreground">Email Address *</label>
                       <Input
                         name="email"
                         type="email"
@@ -231,31 +231,31 @@ ${formData.message}
                         onChange={handleChange}
                         placeholder="your.email@example.com"
                         required
-                        className="glass border-primary/20 focus:border-primary bg-background/50 text-foreground placeholder:text-muted-foreground h-12"
+                        className="glass border-primary/20 focus:border-primary bg-background/50 text-foreground placeholder:text-muted-foreground h-10"
                       />
                     </div>
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-semibold mb-3 text-foreground">Subject *</label>
+                    <label className="block text-sm font-semibold mb-2 text-foreground">Subject *</label>
                     <Input
                       name="subject"
                       value={formData.subject}
                       onChange={handleChange}
                       placeholder="What's this about?"
                       required
-                      className="glass border-primary/20 focus:border-primary bg-background/50 text-foreground placeholder:text-muted-foreground h-12"
+                      className="glass border-primary/20 focus:border-primary bg-background/50 text-foreground placeholder:text-muted-foreground h-10"
                     />
                   </div>
                   
                   <div>
-                    <label className="block text-sm font-semibold mb-3 text-foreground">Message *</label>
+                    <label className="block text-sm font-semibold mb-2 text-foreground">Message *</label>
                     <Textarea
                       name="message"
                       value={formData.message}
                       onChange={handleChange}
-                      placeholder="Tell me about your project, collaboration ideas, or just say hello! I'd love to hear from you."
-                      rows={6}
+                      placeholder="Tell me about your project, collaboration ideas, or just say hello!"
+                      rows={5}
                       required
                       className="glass border-primary/20 focus:border-primary bg-background/50 text-foreground placeholder:text-muted-foreground resize-none"
                     />
@@ -263,9 +263,9 @@ ${formData.message}
                   
                   <Button 
                     type="submit"
-                    className="w-full btn-gradient h-14 text-lg font-semibold glow-primary"
+                    className="w-full btn-gradient h-12 text-base font-semibold glow-primary"
                   >
-                    <Send className="mr-2" size={20} />
+                    <Send className="mr-2" size={18} />
                     Send Message
                   </Button>
                 </form>
@@ -274,17 +274,11 @@ ${formData.message}
           </div>
         </div>
 
-        {/* Footer */}
-        <div className="text-center mt-20 pt-12 border-t border-border">
-          <Card className="glass-card border-0 p-8 max-w-2xl mx-auto">
-            <p className="text-muted-foreground text-lg leading-relaxed">
-              © 2024 <span className="text-primary font-semibold">Durgesh Soni</span>. 
-              Crafted with <span className="text-accent">❤️</span> using React, TypeScript, and Tailwind CSS.
-            </p>
-            <p className="text-sm text-muted-foreground mt-2">
-              Building the future, one line of code at a time.
-            </p>
-          </Card>
+        {/* Simple Footer */}
+        <div className="text-center mt-16 pt-8 border-t border-border">
+          <p className="text-muted-foreground text-base">
+            © 2025 <span className="text-primary font-semibold">Durgesh Soni</span>, Made with Love ❤️
+          </p>
         </div>
       </div>
     </section>

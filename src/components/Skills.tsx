@@ -1,5 +1,5 @@
 
-import { ExternalLink, Award, CheckCircle, Star, TrendingUp } from "lucide-react";
+import { ExternalLink, Award, CheckCircle, Star } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -89,50 +89,54 @@ export const Skills = () => {
     <section id="skills" className="section-container bg-background">
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
-        <div className="text-center mb-16 lg:mb-20">
+        <div className="text-center mb-12 lg:mb-16">
           <h2 className="section-title">Skills & Expertise</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary via-secondary to-accent mx-auto rounded-full mb-6"></div>
           <p className="section-subtitle">
-            A comprehensive toolkit of modern technologies and frameworks I use to build scalable, high-performance applications
+            Technologies and frameworks I use to build scalable, high-performance applications
           </p>
         </div>
 
-        {/* Skills Tabs */}
-        <div className="mb-20">
+        {/* Skills Tabs - Mobile Optimized */}
+        <div className="mb-16">
           <Tabs defaultValue="languages" className="w-full">
-            <TabsList className="grid w-full grid-cols-2 lg:grid-cols-5 mb-8 bg-card/50 backdrop-blur-sm">
-              {skillCategories.map((category) => (
-                <TabsTrigger 
-                  key={category.id} 
-                  value={category.id}
-                  className="text-xs sm:text-sm font-medium data-[state=active]:bg-primary data-[state=active]:text-primary-foreground"
-                >
-                  {category.title}
-                </TabsTrigger>
-              ))}
-            </TabsList>
+            {/* Mobile: Horizontal scroll tabs */}
+            <div className="overflow-x-auto pb-2 mb-8">
+              <TabsList className="flex w-max min-w-full bg-card/30 backdrop-blur-sm border border-border/50 p-1 rounded-2xl">
+                {skillCategories.map((category) => (
+                  <TabsTrigger 
+                    key={category.id} 
+                    value={category.id}
+                    className="whitespace-nowrap px-4 py-3 text-sm font-medium rounded-xl data-[state=active]:bg-primary data-[state=active]:text-primary-foreground transition-all duration-300"
+                  >
+                    {category.title}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            </div>
 
             {skillCategories.map((category) => (
-              <TabsContent key={category.id} value={category.id} className="mt-6">
-                <Card className="glass-card border-0 hover-glow">
-                  <CardHeader className="pb-6">
-                    <CardTitle className="text-2xl sm:text-3xl font-bold text-center gradient-text">
+              <TabsContent key={category.id} value={category.id} className="mt-0">
+                <Card className="glass-card border-0">
+                  <CardHeader className="pb-4 px-4 sm:px-6 lg:px-8">
+                    <CardTitle className="text-xl sm:text-2xl lg:text-3xl font-bold text-center gradient-text">
                       {category.title}
                     </CardTitle>
                   </CardHeader>
                   
-                  <CardContent>
-                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
+                  <CardContent className="px-4 sm:px-6 lg:px-8 pb-6 sm:pb-8">
+                    {/* Simple grid layout for mobile */}
+                    <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-4 lg:gap-6">
                       {category.skills.map((skill, index) => (
                         <div 
                           key={skill.name} 
-                          className="group/skill flex flex-col items-center p-4 sm:p-6 rounded-xl bg-card/30 backdrop-blur-sm border border-white/10 hover:bg-card/50 hover:border-primary/30 transition-all duration-300 hover-lift animate-fade-in-up"
-                          style={{ animationDelay: `${index * 100}ms` }}
+                          className="group flex flex-col items-center p-3 sm:p-4 lg:p-6 rounded-xl bg-card/50 border border-border/30 hover:bg-card/80 hover:border-primary/50 transition-all duration-300 hover:scale-105 animate-fade-in-up"
+                          style={{ animationDelay: `${index * 50}ms` }}
                         >
-                          <div className="text-3xl sm:text-4xl mb-3 group-hover/skill:scale-110 transition-transform duration-300">
+                          <div className="text-2xl sm:text-3xl lg:text-4xl mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-300">
                             {skill.icon}
                           </div>
-                          <span className="text-sm sm:text-base font-semibold text-foreground text-center leading-tight">
+                          <span className="text-xs sm:text-sm lg:text-base font-medium text-foreground text-center leading-tight">
                             {skill.name}
                           </span>
                         </div>
@@ -145,56 +149,44 @@ export const Skills = () => {
           </Tabs>
         </div>
 
-        {/* Certifications Section */}
-        <div className="text-center mb-12">
-          <h3 className="text-3xl sm:text-4xl font-bold mb-4 gradient-text flex items-center justify-center">
-            <Award className="mr-3 text-primary w-8 h-8" />
+        {/* Certifications Section - Simplified */}
+        <div className="text-center mb-8">
+          <h3 className="text-2xl sm:text-3xl font-bold mb-4 gradient-text flex items-center justify-center">
+            <Award className="mr-3 text-primary w-6 h-6 sm:w-8 sm:h-8" />
             Professional Certifications
           </h3>
-          <p className="text-muted-foreground text-base sm:text-lg">
-            Validated expertise through industry-recognized certifications and continuous learning
-          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 max-w-4xl mx-auto">
           {certifications.map((cert, index) => (
             <Card 
               key={cert.title}
-              className="glass-card border-0 hover-glow group hover-lift animate-fade-in-up relative overflow-hidden"
-              style={{ animationDelay: `${0.6 + index * 0.2}s` }}
+              className="glass-card border-0 hover-glow group hover-lift animate-fade-in-up"
+              style={{ animationDelay: `${0.4 + index * 0.1}s` }}
             >
-              {/* Gradient overlay */}
-              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-primary/20 to-transparent rounded-bl-full"></div>
-              
-              <CardContent className="p-6 sm:p-8 relative">
-                <div className="flex items-start justify-between mb-6">
+              <CardContent className="p-4 sm:p-6">
+                <div className="flex items-start justify-between mb-4">
                   <div className="flex-1">
-                    <div className="flex items-center mb-3">
-                      <span className="text-3xl mr-3">{cert.badge}</span>
+                    <div className="flex items-center mb-2">
+                      <span className="text-2xl mr-3">{cert.badge}</span>
                       <div>
-                        <h4 className="font-bold text-lg sm:text-xl text-foreground mb-1 leading-tight">
+                        <h4 className="font-bold text-base sm:text-lg text-foreground leading-tight">
                           {cert.title}
                         </h4>
                         <div className="flex items-center space-x-2">
-                          <span className="text-primary font-semibold text-sm sm:text-base">{cert.issuer}</span>
+                          <span className="text-primary font-semibold text-sm">{cert.issuer}</span>
                           {cert.verified && (
-                            <CheckCircle className="w-4 h-4 text-green-400" />
+                            <CheckCircle className="w-4 h-4 text-accent" />
                           )}
                         </div>
                       </div>
                     </div>
                     
-                    <div className="space-y-3">
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs sm:text-sm text-muted-foreground">Issue Date: {cert.date}</span>
-                        <span className="px-2 py-1 bg-gradient-to-r from-secondary/20 to-accent/20 text-secondary text-xs rounded-full font-medium">
-                          {cert.level}
-                        </span>
-                      </div>
-                      
-                      <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                        {cert.description}
-                      </p>
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="text-xs text-muted-foreground">{cert.date}</span>
+                      <span className="px-2 py-1 bg-secondary/20 text-secondary text-xs rounded-full font-medium">
+                        {cert.level}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -202,7 +194,7 @@ export const Skills = () => {
                 <Button 
                   variant="outline"
                   size="sm"
-                  className="w-full btn-outline-glow text-sm"
+                  className="w-full btn-outline-glow text-sm h-10"
                   onClick={() => window.open(cert.link, "_blank")}
                 >
                   <ExternalLink className="mr-2 w-4 h-4" />
