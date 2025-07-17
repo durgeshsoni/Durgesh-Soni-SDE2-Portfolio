@@ -67,27 +67,27 @@ export const About = () => {
           <div className="space-y-8 animate-slide-in-right order-1 lg:order-2" style={{ animationDelay: '0.3s' }}>
             {/* Header with icon */}
             <div className="flex items-center space-x-4 mb-8">
-              <div className="p-3 sm:p-4 bg-gradient-to-r from-primary to-secondary rounded-xl glow-orange">
-                <User className="text-white w-6 h-6 sm:w-8 sm:h-8" />
+              <div className="p-3 sm:p-4 bg-gradient-to-r from-primary to-secondary rounded-xl glow-primary">
+                <User className="text-primary-foreground w-6 h-6 sm:w-8 sm:h-8" />
               </div>
               <div>
-                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground">Software Engineer</h3>
-                <p className="text-muted-foreground font-mono">Full-Stack Developer</p>
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground font-display">Software Engineer</h3>
+                <p className="text-muted-foreground font-mono text-sm sm:text-base">Full-Stack Developer</p>
               </div>
             </div>
             
             {/* Description */}
             <div className="space-y-6">
-              <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed">
-                Self-driven Software Engineer with <span className="text-primary font-semibold">4+ years of experience</span> specializing in backend development, 
-                scalable microservices, API design, and cloud architectures. Skilled in Spring Boot, Microservices, 
+              <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed font-light">
+                Self-driven Software Engineer with <span className="text-primary font-semibold">4+ years of experience</span> specializing in enterprise backend development, 
+                scalable microservices architecture, RESTful API design, and cloud-native solutions. Expert in Spring Boot ecosystem, Microservices patterns, 
                 distributed systems, and AWS cloud deployments.
               </p>
               
-              <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed">
-                Adept at system design, performance optimization, and CI/CD automation. 
+              <p className="text-base sm:text-lg lg:text-xl text-muted-foreground leading-relaxed font-light">
+                Adept at system design, performance optimization, and DevOps automation. 
                 Thrive in agile environments and passionate about writing clean, 
-                maintainable code that drives real business impact.
+                maintainable code that drives measurable business impact and user satisfaction.
               </p>
 
               {/* Key highlights */}

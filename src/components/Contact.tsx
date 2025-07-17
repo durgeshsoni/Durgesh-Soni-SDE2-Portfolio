@@ -145,9 +145,9 @@ ${formData.message}
                 >
                   <CardContent className="p-6 lg:p-8">
                     <div className="flex items-center space-x-4">
-                      <div className="p-4 bg-gradient-to-r from-primary to-secondary rounded-xl group-hover:scale-110 transition-transform duration-300 glow-orange">
-                        <info.icon className="text-white w-6 h-6" />
-                      </div>
+                        <div className="p-4 bg-gradient-to-r from-primary to-secondary rounded-xl group-hover:scale-110 transition-transform duration-300 glow-primary">
+                          <info.icon className="text-primary-foreground w-6 h-6" />
+                        </div>
                       <div className="flex-1">
                         <p className="font-bold text-lg text-foreground">{info.label}</p>
                         <a 
@@ -263,7 +263,7 @@ ${formData.message}
                   
                   <Button 
                     type="submit"
-                    className="w-full btn-gradient h-14 text-lg font-semibold glow-orange"
+                    className="w-full btn-gradient h-14 text-lg font-semibold glow-primary"
                   >
                     <Send className="mr-2" size={20} />
                     Send Message

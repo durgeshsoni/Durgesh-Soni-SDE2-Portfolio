@@ -64,8 +64,8 @@ export const Education = () => {
                 <div className="lg:col-span-2 p-8 lg:p-12">
                   <CardHeader className="p-0 mb-6">
                     <div className="flex items-start space-x-4 mb-6">
-                      <div className={`p-3 bg-gradient-to-r ${edu.color} rounded-xl glow-orange group-hover:scale-110 transition-transform duration-300`}>
-                        <GraduationCap className="text-white w-6 h-6" />
+                      <div className={`p-3 bg-gradient-to-r ${edu.color} rounded-xl glow-primary group-hover:scale-110 transition-transform duration-300`}>
+                        <GraduationCap className="text-primary-foreground w-6 h-6" />
                       </div>
                       <div className="flex-1">
                         <CardTitle className="text-2xl lg:text-3xl font-bold text-foreground mb-2">
@@ -156,10 +156,10 @@ export const Education = () => {
               <BookOpen className="text-primary w-8 h-8 mr-3" />
               <h3 className="text-2xl lg:text-3xl font-bold gradient-text">Learning Philosophy</h3>
             </div>
-            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl mx-auto font-light">
               My educational journey reflects a commitment to continuous learning and growth. 
               From liberal arts to computer applications, each step has contributed to my 
-              holistic approach to problem-solving and technology development.
+              holistic approach to problem-solving and innovative technology development.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
               <div className="space-y-2">

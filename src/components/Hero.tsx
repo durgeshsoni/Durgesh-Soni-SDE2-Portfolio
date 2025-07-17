@@ -21,7 +21,7 @@ export const Hero = () => {
   };
 
   return (
-    <section id="hero" className="min-h-[80vh] lg:min-h-[85vh] flex items-center justify-center relative overflow-hidden">
+    <section id="hero" className="min-h-[75vh] lg:min-h-[80vh] flex items-center justify-center relative overflow-hidden">
       {/* Animated background particles */}
       <div className="absolute inset-0">
         {[...Array(15)].map((_, i) => (
@@ -56,16 +56,16 @@ export const Hero = () => {
           </div>
           
           {/* Description */}
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 lg:mb-12 max-w-3xl mx-auto leading-relaxed animate-fade-in-up px-4" style={{ animationDelay: '0.3s' }}>
-            Passionate about creating scalable backend solutions and engaging user experiences. 
-            Specialized in <span className="text-primary font-semibold">Java</span>, <span className="text-secondary font-semibold">Spring Boot</span>, and modern web technologies.
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-8 lg:mb-12 max-w-4xl mx-auto leading-relaxed animate-fade-in-up px-4 font-light" style={{ animationDelay: '0.3s' }}>
+            Full-stack developer passionate about building scalable applications and innovative solutions. 
+            Specializing in <span className="text-primary font-medium">Java Enterprise</span>, <span className="text-secondary font-medium">Spring Ecosystem</span>, and <span className="text-accent font-medium">Modern Web Technologies</span>.
           </p>
           
           {/* Action buttons */}
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-12 lg:mb-16 animate-fade-in-up px-4" style={{ animationDelay: '0.6s' }}>
             <Button 
               size="lg" 
-              className="btn-gradient w-full sm:w-auto min-w-[200px] h-12 lg:h-14 text-base lg:text-lg glow-orange"
+              className="btn-gradient w-full sm:w-auto min-w-[220px] h-12 lg:h-14 text-base lg:text-lg glow-primary"
               onClick={() => scrollToSection("projects")}
             >
               View My Work

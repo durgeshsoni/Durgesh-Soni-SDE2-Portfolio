@@ -61,8 +61,8 @@ export const Experience = () => {
               <CardHeader className="pb-6">
                 <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between">
                   <div className="flex items-start space-x-4 mb-4 lg:mb-0">
-                    <div className={`p-3 bg-gradient-to-r ${exp.color} rounded-xl glow-orange group-hover:scale-110 transition-transform duration-300`}>
-                      <Briefcase className="text-white w-6 h-6" />
+                    <div className={`p-3 bg-gradient-to-r ${exp.color} rounded-xl glow-primary group-hover:scale-110 transition-transform duration-300`}>
+                      <Briefcase className="text-primary-foreground w-6 h-6" />
                     </div>
                     <div>
                       <CardTitle className="text-2xl lg:text-3xl font-bold text-foreground mb-2">

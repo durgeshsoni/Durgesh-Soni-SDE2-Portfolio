@@ -206,7 +206,7 @@ export const Projects = () => {
                   {/* Action Buttons */}
                   <div className="flex flex-wrap gap-4 mt-8">
                     <Button 
-                      className={`btn-gradient flex-1 min-w-[160px] h-12 text-base glow-orange`}
+                      className={`btn-gradient flex-1 min-w-[160px] h-12 text-base glow-primary`}
                       onClick={() => window.open(project.githubUrl, "_blank")}
                     >
                       <Github className="mr-2" size={18} />
